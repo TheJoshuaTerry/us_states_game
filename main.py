@@ -23,10 +23,7 @@ while len(states) < NUM_STATES:
     # Exit game
     if state_choice == 'Exit':
         # Create list of missed states
-        missed_states = []
-        for state in state_data.state:
-            if state not in states:
-                missed_states.append(state)
+        missed_states = [state for state in state_data.state if state not in states]
         break
     # Check if state has been used
     for check in states:
